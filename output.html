@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+        }
+        .login-container {
+            zoom: 1.1;
+            max-width: 100%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập</h2>
+        <form action="login.php" method="POST">
+            <div class="form-group form-group-lg">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" name="username" required>
+            </div>
+
+            <div class="form-group form-group-lg">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-primary" value="Đăng nhập">
+            </div>
+        </form>
+
+        <p class="text-center"><a href="forgot_password.php">Quên mật khẩu?</a></p>
+    </div>
+
+    <div class="user-info">
+        <h3>User Information</h3>
+        <p>MaND: 123</p>
+        <p>TenND: John Doe</p>
+        <p>SDT: 123456789</p>
+        <p>Diachi: 123 Main St</p>
+        <p>TypeAccount: admin</p>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
