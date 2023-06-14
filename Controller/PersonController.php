@@ -3,16 +3,14 @@
 include 'Model/Database.php';
 
 class PersonController {
-    private $db;
-    private $USERNAME = "root";
-    private $PASSWORD = "";
-    private $SERVER = "localhost";
-    private $DBNAME = "db_qldkmh_php";
+
     private $NAME_TABLE = "nguoidung";
+
+    private $db;
 
     public function __construct() {
         // Tạo đối tượng Database và kết nối tới cơ sở dữ liệu
-        $this->db = new Database($this->SERVER, $this->USERNAME, $this->PASSWORD, $this->DBNAME);
+        $this->db = new Database();
     }
 
     public function addPerson($person) {

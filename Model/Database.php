@@ -1,19 +1,16 @@
 <?php
 class Database {
-    private $host;        // Địa chỉ host của cơ sở dữ liệu
-    private $username;    // Tên đăng nhập của người dùng cơ sở dữ liệu
-    private $password;    // Mật khẩu của người dùng cơ sở dữ liệu
-    private $database;    // Tên cơ sở dữ liệu
+    private $username = "root";
+    private $password = "";
+    private $host = "localhost";
+    private $database = "db_qldkmh_php";
 
     private $conn;        // Đối tượng kết nối cơ sở dữ liệu
 
-    public function __construct($host, $username, $password, $database) {
-        $this->host = $host;
-        $this->username = $username;
-        $this->password = $password;
-        $this->database = $database;
+    public function __construct() {
 
         $this->connect();   // Khi khởi tạo lớp Database, tự động kết nối tới cơ sở dữ liệu
+
     }
 
     private function connect() {
@@ -26,6 +23,11 @@ class Database {
         }
     }
 
+    public function getConnect(){
+
+        return $this->conn;
+
+    }
     public function insert($table, $data) {
         // Tạo chuỗi các cột
         $columns = implode(", ", array_keys($data));
@@ -62,6 +64,7 @@ class Database {
         // Thực hiện truy vấn
         return $this->conn->query($sql);
     }
+
 
     // Các phương thức khác như select, executeQuery, ...
 
