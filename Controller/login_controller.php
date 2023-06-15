@@ -6,10 +6,14 @@ require_once '../Model/Database.php';
 
 $accountDAOImpl = new AccountDAOImpl();
 
-$account = new Account("Khanh3", "123456789", "HELLO WORLD");
+$account = new Account("gv01", "gv01@123", "gv-01");
+$account1 = new Account("sv01", "sv01@123", "sv-01");
 
-//$result = $accountDAOImpl->createAccount($account);
-$result = $accountDAOImpl->getAccountByUsernameAndPassword($account);
+
+$result = $accountDAOImpl->createAccount($account);
+
+$result1 = $accountDAOImpl->createAccount($account1);
+//$result = $accountDAOImpl->getAccountByUsernameAndPassword($account);
 
 
 if ($result === true) {
@@ -21,7 +25,7 @@ if ($result === true) {
     // ...
 }
 
-
+ 
 
 /*
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
